@@ -25,23 +25,14 @@ gulp.task('build', ['jshint'], function() {
         .pipe(umd_wrap({ namespace: 'outmode' }))
         .pipe(gulp.dest('build'))
         .pipe(uglify())
-        .pipe(rename('ouimode.min.js'))
+        .pipe(rename('outmode.min.js'))
         .pipe(gulp.dest('build'));
 
-    gulp.src('test/ouibounce.styl')
-        .pipe(stylus())
-        .pipe(prefix())
-        .pipe(rename('ouibounce.css'))
-        .pipe(gulp.dest('test'))
-        .pipe(minifyCSS())
-        .pipe(rename('ouibounce.min.css'))
-        .pipe(gulp.dest('test'));
 });
 
 
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch('test/ouibounce.styl', ['build']);
   gulp.watch('source/ouibounce.js', ['build']);
 });
