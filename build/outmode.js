@@ -10,7 +10,7 @@
   }
 }(this, function(require,exports,module) {
 
-return function ouibounce(el, custom_config) {
+return function outmode(el, custom_config) {
   "use strict";
 
   var config     = custom_config || {},
@@ -92,8 +92,6 @@ return function ouibounce(el, custom_config) {
     return checkCookieValue(cookieName, 'true') && !aggressive;
   }
 
-  // You can use ouibounce without passing an element
-  // https://github.com/carlsednaoui/ouibounce/issues/30
   function fire() {
     if (isDisabled() || suppressed) { return; }
 
@@ -106,20 +104,14 @@ return function ouibounce(el, custom_config) {
   function disable(custom_options) {
     var options = custom_options || {};
 
-    // you can pass a specific cookie expiration when using the OuiBounce API
-    // ex: _ouiBounce.disable({ cookieExpire: 5 });
     if (typeof options.cookieExpire !== 'undefined') {
       cookieExpire = setDefaultCookieExpire(options.cookieExpire);
     }
 
-    // you can pass use sitewide cookies too
-    // ex: _ouiBounce.disable({ cookieExpire: 5, sitewide: true });
     if (options.sitewide === true) {
       sitewide = ';path=/';
     }
 
-    // you can pass a domain string when the cookie should be read subdomain-wise
-    // ex: _ouiBounce.disable({ cookieDomain: '.example.com' });
     if (typeof options.cookieDomain !== 'undefined') {
       cookieDomain = ';domain=' + options.cookieDomain;
     }
@@ -148,7 +140,6 @@ return function ouibounce(el, custom_config) {
   };
 }
 
-/*exported ouibounce */
 ;
 
 }));
