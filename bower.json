@@ -1,0 +1,29 @@
+{
+  "name": "outmode",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ecwillis/outmode",
+  "authors": [
+    "Eric Willis"
+  ],
+  "description": "A lib for showing an outmode to users leaving your site.",
+  "main": "build/outmode.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "modal",
+    "leave",
+    "page",
+    "marketing"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source",
+    "test",
+    "tests"
+  ]
+}
